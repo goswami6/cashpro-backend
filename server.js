@@ -42,7 +42,6 @@ app.use(
 );
 
 // 👇 VERY IMPORTANT (Preflight fix)
-app.options("*", cors());
 app.use(express.json());
 
 
