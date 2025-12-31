@@ -32,14 +32,12 @@ const rootPath = process.cwd();
 /* --------- MIDDLEWARE --------- */
 app.use(
   cors({
-    origin: [
-      "https://cashpro-frontend.vercel.app"
-    ],
+    origin: "https://cashpro-frontend.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
+
 
 // 👇 VERY IMPORTANT (Preflight fix)
 app.use(express.json());
