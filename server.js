@@ -64,6 +64,10 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5005;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const startServer = async () => {
+  await connectDB();   // ✅ WAIT for MongoDB
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+};
+
